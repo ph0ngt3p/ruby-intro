@@ -33,12 +33,12 @@
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.select(:gender, options_for_select({ "Male" => "0".to_i, "Female" => "1".to_i }), {:prompt => 'Select Gender'}) %>
+    <%= form.select(:gender, User.genders.keys.to_a) %>
   </div>
 
   <div class="field">
     <%= form.label :birthday %>
-    <%= form.date_select :date_of_birth, {order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, {required: true} %>
+    <%= form.date_select :date_of_birth, { order: [:month, :day, :year], prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }, start_year: Date.today.year - 18, end_year: Date.today.year - 100}, { required: true } %>
   </div>
 
   <div class="actions">
